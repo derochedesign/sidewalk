@@ -117,18 +117,18 @@ const countKeywords = words => {
     let keyCounts = [];
     let counted = [];
     
-    words.map(trait => {
+    words.map(word => {
         //check if already counted
-        let duplicates = counted.filter(aTrait => aTrait == trait);
+        let duplicates = counted.filter(countedWord => countedWord == word);
         if (duplicates.length == 0) {
             
             let c = 0;
             words.filter(keyword => (
-                (trait == keyword) && (c++)
+                (word == keyword) && (c++)
             ));
             
-            keyCounts.push({trait: trait,count: c});
-            counted.push(trait);
+            keyCounts.push({keyword: word,count: c});
+            counted.push(word);
         }
     });
     return keyCounts;
