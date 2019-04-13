@@ -2,6 +2,8 @@
 :root {
     
     --impactcolour: #5500d6;
+    --white: white;
+    --black: black; 
 
     --heading: "Poppins", "Helvetica", sans-serif;
     --subheading: "Open Sans", "Helvetica", sans-serif;
@@ -22,12 +24,12 @@
 
 ::selection {
     background-color: var(--impactcolour);
-    color: white;
+    color: var(--white);
 }
 
 html {
     font: 300 1em/var(--linespace) var(--content);
-    color: white;
+    color: var(--white);
     background-color: black;
 }
 
@@ -44,12 +46,12 @@ body {
 }
 
 button.button {
-    border: solid 2px white;
+    border: solid 2px var(--white);
     outline: none;
     padding: calc( var(--padding) / 4) calc( var(--padding) / 2);
-    color: white;
+    color: var(--white);
     cursor: pointer;
-    margin: 0 0.5em;
+    margin: 0.5em;
     background-color: transparent;
     font-size: 1em;
     transition: 0.2s ease-out;
@@ -67,7 +69,7 @@ button.button.important {
 }
 button.button.important:hover {
     transform: scale(1.1);
-    background-color: black;
+    background-color: var(--black);
 }
 
 .questions {
