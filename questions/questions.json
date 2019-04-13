@@ -49,7 +49,7 @@
                 {
                     "id":201,
                     "label":"Always",
-                    "frugality":null, "health":-1, "environment": null,
+                    "frugality":2, "health":null, "environment": -0.5,
                     "personality": [
                         "extroverted",
                         "social",

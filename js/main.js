@@ -79,7 +79,57 @@ const createProfile = finalMetrics => {
     //put metrics 1,2,3 on a scale -5 to 5
     //count instances for each keyword in metrics 4 and 5
     
-    console.log(`Frugality: ${finalMetrics.frugality}, Health: ${finalMetrics.health}, Environment: ${finalMetrics.environment}`);
-    console.log(`Personality Traits:`,finalMetrics.personality, `Purchasing Habits: `, finalMetrics.purchasing);
+    //know the max possible negative and positive for each segment
+    //then take the users number and gets its position relative to that scale, then put it on the -5 to 5 scale
     
+    //define the possible max for each metric
+    const endpoints = {
+       new: 5,
+       frugality: 10,
+       health: 8,
+       environment: 7
+    };
+    
+    //get the modifiers to transfer from their specific scale to a 5 scale
+    const modifiers = {
+        frugality: endpoints.frugality / endpoints.new,
+        health: endpoints.health / endpoints.new,
+        environment: endpoints.environment / endpoints.new
+    }
+    
+    //place on 5 scale (finalMetrics holds the score for each metric)
+    const newScale = {
+        frugality: finalMetrics.frugality/modifiers.frugality,     //1
+        health: finalMetrics.health/modifiers.health,        //2
+        environment: finalMetrics.environment/modifiers.environment   //3
+    }
+    
+    const personalityTraits = countKeywords(finalMetrics.personality);
+    const purchasingHabits = countKeywords(finalMetrics.purchasing);
+    
+    console.log(`Frugality: (-5) ${newScale.frugality} (5), Health: (-5) ${newScale.health} (5), Environment: (-5) ${newScale.environment} (5)`);
+    console.log(`Personality Traits:`,personalityTraits, `Purchasing Habits: `, purchasingHabits);
+    
+}
+
+const countKeywords = words => {
+    
+    let keyCounts = [];
+    let counted = [];
+    
+    words.map(trait => {
+        //check if already counted
+        let duplicates = counted.filter(aTrait => aTrait == trait);
+        if (duplicates.length == 0) {
+            
+            let c = 0;
+            words.filter(keyword => (
+                (trait == keyword) && (c++)
+            ));
+            
+            keyCounts.push({trait: trait,count: c});
+            counted.push(trait);
+        }
+    });
+    return keyCounts;
 }
