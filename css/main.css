@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:700|Open+Sans:300');
+:root {
+    
+    --impactcolour: #5500d6;
+
+    --heading: "Poppins", "Helvetica", sans-serif;
+    --subheading: "Open Sans", "Helvetica", sans-serif;
+    --content: "Open Sans", "Helvetica", sans-serif;
+
+    --linespace: 1.5;
+    --padding: 2em;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+::selection {
+    background-color: var(--impactcolour);
+    color: white;
+}
+
+html {
+    font: 300 1em/var(--linespace) var(--content);
+    color: white;
+    background-color: black;
+}
+
+h2 {
+    font: 300 2em/var(--linespace) var(--heading);
+}
+h6 {
+    font: 700 0.8em/var(--linespace) var(--subheading);
+}
+
+body {
+    background-color: black;
+    padding: calc( var(--padding) * 1.5);
+}
+
+button.button {
+    border: solid 2px white;
+    outline: none;
+    padding: calc( var(--padding) / 4) calc( var(--padding) / 2);
+    color: white;
+    cursor: pointer;
+    margin: 0 0.5em;
+    background-color: transparent;
+    font-size: 1em;
+    transition: 0.2s ease-out;
+}
+button.button:hover {
+    /* box-shadow: 0 0 0 3px var(--impactcolour); */
+    border: solid 2px var(--impactcolour);
+    background-color: var(--impactcolour);
+    transform: scale(1.1);
+}
+
+button.button.important {
+    border: solid 2px var(--impactcolour);
+    background-color: var(--impactcolour);
+}
+button.button.important:hover {
+    transform: scale(1.1);
+    background-color: black;
+}
+
+.questions {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.questions .question {
+    margin: var(--padding) 0;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    max-width: 30em;
+}
+.questions .answers {
+    padding-top: var(--padding);
+}

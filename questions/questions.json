@@ -1,0 +1,86 @@
+{
+    "questions" : [
+        {
+            "id":101,
+            "question": "Are you on social media within 5 minutes of waking up?",
+            "sub":"This is an optional subtext.",
+            "answers": [
+                {
+                    "id":201,
+                    "label":"Always",
+                    "frugality":null, "health":-1, "environment": null,
+                    "personality": [
+                        "extroverted",
+                        "social",
+                        "techy",
+                        "young",
+                        "addicted"
+                    ],
+                    "purchasing":null
+                },
+                {
+                    "id":202,
+                    "label":"Sometimes",
+                    "frugality":null, "health":0, "environment": null,
+                    "personality": [
+                        "conservative",
+                        "social"
+                    ],
+                    "purchasing":null
+                },
+                {
+                    "id":203,
+                    "label":"Never",
+                    "frugality":null, "health":1, "environment": null,
+                    "personality": [
+                        "unpopular",
+                        "nontechy",
+                        "old"
+                    ],
+                    "purchasing":null
+                }
+            ]
+        },
+        {
+            "id":102,
+            "question": "Question 2?",
+            "sub": null,
+            "answers": [
+                {
+                    "id":201,
+                    "label":"Always",
+                    "frugality":null, "health":-1, "environment": null,
+                    "personality": [
+                        "extroverted",
+                        "social",
+                        "techy",
+                        "young",
+                        "addicted"
+                    ],
+                    "purchasing":null
+                },
+                {
+                    "id":202,
+                    "label":"Sometimes",
+                    "frugality":null, "health":0, "environment": null,
+                    "personality": [
+                        "conservative",
+                        "social"
+                    ],
+                    "purchasing":null
+                },
+                {
+                    "id":203,
+                    "label":"Never",
+                    "frugality":null, "health":1, "environment": null,
+                    "personality": [
+                        "unpopular",
+                        "nontechy",
+                        "old"
+                    ],
+                    "purchasing":null
+                }
+            ]
+        }
+    ]
+}
