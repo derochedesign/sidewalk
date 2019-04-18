@@ -19,7 +19,9 @@ $.getJSON('questions/questions.json', function(result) {
 });
 
 const ready = allQuestions => {
-    
+    const questionCount = allQuestions.length;
+    let pos = 0;
+    submitQ.style.display = "none";
     //create html
     allQuestions.map(question => 
         questionsDom.innerHTML += QuestionTemplate(question));
@@ -31,10 +33,18 @@ const ready = allQuestions => {
         
         equateMetrics(e.target.dataset.id, e.target.parentElement.dataset.id, allQuestions);
         // hide question/show next
+        e.target.parentElement.style.display = "none";
+        pos++;
+        
+        if (pos == questionCount) {
+            submitQ.style.display = "block";
+            submitQ.addEventListener("click", e => createProfile(metrics));
+        }
+        
     });
     
-    //temp submit button
-    submitQ.addEventListener("click", e => createProfile(metrics));
+    //temp submit buttom
+    
 }
 
 const QuestionTemplate = props => {
@@ -85,9 +95,9 @@ const createProfile = finalMetrics => {
     //define the possible max for each metric
     const endpoints = {
        new: 5,
-       frugality: 10,
-       health: 8,
-       environment: 7
+       frugality: 7,
+       health: 4.5,
+       environment: 4
     };
     
     //get the modifiers to transfer from their specific scale to a 5 scale
