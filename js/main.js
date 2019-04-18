@@ -7,7 +7,7 @@ let metrics = {
     health: 0,        //2
     environment: 0,   //3
     personality: [],  //4
-    purchasing: []    //5
+    age: []    //5
 }
 
 $.getJSON('questions/questions.json', function(result) {
@@ -79,7 +79,7 @@ const equateMetrics = (bId, qId, allQ) => {
     (ans.environment) && (metrics.environment += ans.environment);
     
     (ans.personality) && (ans.personality.map(trait => metrics.personality.push(trait)));
-    (ans.purchasing) && (ans.purchasing.map(habit => metrics.purchasing.push(habit)));
+    (ans.age) && (ans.age.map(age => metrics.age.push(age)));
     
     console.log(metrics); 
     
@@ -95,9 +95,9 @@ const createProfile = finalMetrics => {
     //define the possible max for each metric
     const endpoints = {
        new: 5,
-       frugality: 7,
-       health: 4.5,
-       environment: 4
+       frugality: 4,
+       health: 4,
+       environment: 2
     };
     
     //get the modifiers to transfer from their specific scale to a 5 scale
@@ -115,10 +115,10 @@ const createProfile = finalMetrics => {
     }
     
     const personalityTraits = countKeywords(finalMetrics.personality);
-    const purchasingHabits = countKeywords(finalMetrics.purchasing);
+    const ageDefine = countKeywords(finalMetrics.age);
     
     console.log(`Frugality: (-5) ${newScale.frugality} (5), Health: (-5) ${newScale.health} (5), Environment: (-5) ${newScale.environment} (5)`);
-    console.log(`Personality Traits:`,personalityTraits, `Purchasing Habits: `, purchasingHabits);
+    console.log(`Personality Traits:`,personalityTraits, `Counting Age: `, ageDefine);
     
 }
 
