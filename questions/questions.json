@@ -58,7 +58,7 @@
                 {
                     "id":202,
                     "label":"Café (Starbucks, etc.)",
-                    "frugality":null, "health":0, "environment": null,
+                    "frugality":-0.5, "health":0, "environment": null,
                     "personality": [
                         "hipster"
                     ],
@@ -191,7 +191,7 @@
             ]
         },
         {
-            "id":104,
+            "id":105,
             "question": "How do you listen to music?",
             "sub": null,
             "answers": [

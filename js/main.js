@@ -72,6 +72,9 @@ const equateMetrics = (bId, qId, allQ) => {
     let ans = currQ.answers.filter(a => a.id == bId)[0];
     
     // let tempMetrics = Object.assign({}, metrics); //doesn't clone obj arr's
+    console.log(`health: ${ans.health}`);
+    console.log(`frug: ${ans.frugality}`);
+    console.log(`ec: ${ans.environment}`);
     
     //apply metric changes !! we need to figure out a good way to do the scales, rather than just add/subtract
     (ans.frugality) && (metrics.frugality += ans.frugality);
